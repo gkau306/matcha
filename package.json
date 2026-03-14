@@ -1,0 +1,11 @@
+{
+  "name": "matcha-cafe-finder",
+  "version": "1.0.0",
+  "description": "Find matcha cafes — search by vibe, quality, flavour",
+  "scripts": {
+    "install:backend": "cd backend && npm install",
+    "seed": "cd backend && node seed.js",
+    "start": "cd backend && node server.js",
+    "dev": "cd backend && npm run dev"
+  }
+}

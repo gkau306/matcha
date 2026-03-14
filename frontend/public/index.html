@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>matcha — find your cup</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="/" class="nav-logo">m.</a>
+    <div class="nav-links">
+      <a href="/">find a café</a>
+      <span class="nav-sep">|</span>
+      <a href="#about">about</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-text">
+      <p class="hero-eyebrow">the matcha edit</p>
+      <h1 class="hero-headline">find your<br /><em>perfect cup</em></h1>
+      <p class="hero-sub">ceremonial grade, milky, sweet, earthy — whatever you're after,<br />we've mapped every café worth visiting.</p>
+    </div>
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=900&q=80" alt="matcha" />
+    </div>
+  </header>
+
+  <!-- TICKER -->
+  <div class="ticker-wrap">
+    <div class="ticker">
+      <span>ceremonial grade</span><span class="dot">·</span>
+      <span>oat milk</span><span class="dot">·</span>
+      <span>no bitterness</span><span class="dot">·</span>
+      <span>electric green</span><span class="dot">·</span>
+      <span>uji japan</span><span class="dot">·</span>
+      <span>soft serve</span><span class="dot">·</span>
+      <span>sweet & milky</span><span class="dot">·</span>
+      <span>traditional</span><span class="dot">·</span>
+      <span>seasonal specials</span><span class="dot">·</span>
+      <span>ceremonial grade</span><span class="dot">·</span>
+      <span>oat milk</span><span class="dot">·</span>
+      <span>no bitterness</span><span class="dot">·</span>
+      <span>electric green</span><span class="dot">·</span>
+      <span>uji japan</span><span class="dot">·</span>
+      <span>soft serve</span><span class="dot">·</span>
+      <span>sweet & milky</span><span class="dot">·</span>
+    </div>
+  </div>
+
+  <!-- SEARCH -->
+  <section class="search-section">
+    <div class="search-container">
+      <div class="search-bar">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+        <input
+          type="text"
+          id="search-input"
+          placeholder="sweet, milky, no bitterness, oat milk, soft serve…"
+          autocomplete="off"
+        />
+        <button id="search-btn">search</button>
+      </div>
+
+      <div class="filter-row">
+        <div class="filter-group">
+          <label>city</label>
+          <select id="filter-city">
+            <option value="">all cities</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>quality</label>
+          <select id="filter-quality">
+            <option value="">any quality</option>
+            <option value="exceptional">exceptional</option>
+            <option value="good">good</option>
+            <option value="decent">decent</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>price</label>
+          <select id="filter-price">
+            <option value="">any price</option>
+            <option value="$">$ — budget</option>
+            <option value="$$">$$ — mid</option>
+            <option value="$$$">$$$ — premium</option>
+          </select>
+        </div>
+        <button id="clear-filters" class="clear-btn">clear</button>
+      </div>
+
+      <!-- Quick tags -->
+      <div class="quick-tags">
+        <button class="tag-pill" data-q="sweet milky">sweet & milky</button>
+        <button class="tag-pill" data-q="ceremonial no bitterness">no bitterness</button>
+        <button class="tag-pill" data-q="traditional purist">traditional / purist</button>
+        <button class="tag-pill" data-q="oat milk">oat milk</button>
+        <button class="tag-pill" data-q="soft serve">soft serve</button>
+        <button class="tag-pill" data-q="coconut tropical">tropical</button>
+        <button class="tag-pill" data-q="earthy complex">earthy & complex</button>
+        <button class="tag-pill" data-q="seasonal">seasonal specials</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS COUNT -->
+  <section class="results-meta" id="results-meta" style="display:none">
+    <div class="container">
+      <p id="results-count"></p>
+    </div>
+  </section>
+
+  <!-- CAFE GRID -->
+  <section class="grid-section">
+    <div class="grid" id="cafe-grid">
+      <!-- cards injected by JS -->
+    </div>
+    <div class="loading" id="loading">
+      <div class="loading-dots"><span></span><span></span><span></span></div>
+    </div>
+    <div class="no-results" id="no-results" style="display:none">
+      <p>no cafés found — try different keywords</p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-section" id="about">
+    <div class="about-inner">
+      <div class="about-text">
+        <p class="section-label">about this edit</p>
+        <h2>matcha, mapped<br />with intention</h2>
+        <p>We track every café worth visiting — from century-old Kyoto tea houses with American outposts to hidden neighbourhood bars doing something genuinely new with the leaf.</p>
+        <p>Search by how you like your matcha: sweet, milky, earthy, no bitterness, coconut, ceremonial grade. Every listing is researched, tasted, and described honestly.</p>
+        <p class="small">AI-powered review summaries coming soon.</p>
+      </div>
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1582793988951-9aed5509eb97?w=700&q=80" alt="matcha preparation" />
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">m.</div>
+      <p class="footer-tagline">the matcha edit — find your cup</p>
+      <p class="footer-note">reviews powered by community · ai summaries coming soon</p>
+    </div>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>

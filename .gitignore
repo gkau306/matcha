@@ -1,0 +1,5 @@
+node_modules/
+backend/matcha.json
+backend/*.db
+.env
+.DS_Store
