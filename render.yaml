@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: matcha-cafe-finder
+    runtime: node
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && node server.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: PORT
+        value: 3001
+      - key: GOOGLE_PLACES_API_KEY
+        sync: false
